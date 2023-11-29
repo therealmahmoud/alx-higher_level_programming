@@ -8,4 +8,4 @@ def fizzbuzz():
         elif (n // 5) *5 == n:
             print("buzz", end=" ")
         else:
-            print(f"{n}", end=" ")
+            print(n, end=" ")
