@@ -2,10 +2,10 @@
 def fizzbuzz():
     for n in range(1, 101):
         if (n // 5) * 5 == n and (n //3) * 3 == n:
-            print("fizzbuzz", end=" ")
+            print("FizzBuzz", end=" ")
         elif (n // 3) * 3 == n:
-            print("fizz", end=" ")
+            print("Fizz", end=" ")
         elif (n // 5) *5 == n:
-            print("buzz", end=" ")
+            print("Buzz", end=" ")
         else:
             print(n, end=" ")
