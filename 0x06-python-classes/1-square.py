@@ -3,6 +3,8 @@
 """
 Define a class square.
 """
+
+
 class Square:
     """
     A class which the size attribute is private.
