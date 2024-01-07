@@ -7,15 +7,15 @@
 
 def say_my_name(first_name, last_name=""):
 
-    """_summary_
+    """ A function which prints first and last names.
 
     Args:
-        first_name (string)
-        last_name (str, optional)
+        first_name (string).
+        last_name (str, optional).
 
     Raises:
-        TypeError: first_name must be a string
-        TypeError: last_name must be a string
+        TypeError: first_name must be a string.
+        TypeError: last_name must be a string.
     """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
