@@ -161,5 +161,6 @@ class Rectangle(Base):
         except IndexError:
             pass
     def to_dictionary(self):
-        """A dictionary which contains attr."""
-        return self.__dict__
+        """ to dictionary to return representation of a Rectangle."""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height':
+                self.height, 'width': self.width}
