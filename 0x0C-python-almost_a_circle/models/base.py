@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" A class which can be accessed. """
 class Base:
     """Base model.
 
