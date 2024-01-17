@@ -1,10 +1,23 @@
 #!/usr/bin/python3
-
+"""Defines a rectangle class."""
 from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    A class representing a Rectangle, inheriting from the Base class.
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Initialize a Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the rectangle.
+            y (int): The y-coordinate of the rectangle.
+            id (int): The identifier of the rectangle.
+        """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -13,10 +26,21 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Get or set the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        Set the width of the rectangle.
+
+        Args:
+            value (int): The width value to set.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -25,10 +49,21 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Get or set the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        Set the height of the rectangle.
+
+        Args:
+            value (int): The height value to set.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -37,10 +72,21 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Get or set the x-coordinate of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """
+        Set the x-coordinate of the rectangle.
+
+        Args:
+            value (int): The x-coordinate value to set.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -49,10 +95,21 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Get or set the y-coordinate of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """
+        Set the y-coordinate of the rectangle.
+
+        Args:
+            value (int): The y-coordinate value to set.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -60,9 +117,16 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """
+        Calculate and return the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
         return self.width * self.height
 
     def display(self):
+        """Display the rectangle using '#' characters."""
         for j in range(self.y):
             print("")
         for i in range(self.height):
@@ -73,5 +137,11 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """
+        Returns a string representation of the rectangle.
+
+        Returns:
+            str: A string representation of the rectangle.
+        """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
  - {self.width}/{self.height}"
