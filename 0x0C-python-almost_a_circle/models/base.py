@@ -51,3 +51,9 @@ class Base:
 
         with open(file_name, mode="w") as fd:
             json.dump(content, fd)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return '[]'
+        return json.loads(json_string)
