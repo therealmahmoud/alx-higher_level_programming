@@ -61,9 +61,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        '''
+        """
             Returns an instance with all the attributes already set
-        '''
+        """
         from models.rectangle import Rectangle
         from models.square import Square
 
@@ -76,22 +76,18 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''
-            loading dict representing the parameters for
-            and instance and from that creating instances
-        '''
-        file_name = cls.__name__ + ".json"
+        """Return a list of classes instantiated from a file of JSON strings.
 
-        if file_name:
-            with open(file_name, encoding="UTF8") as fd:
-                content = cls.from_json_string(fd.read())
-        else:
+        Reads from `<cls.__name__>.json`.
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
             return []
-
-        instances = []
-
-        for instance in content:
-            tmp = cls.create(**instance)
-            instances.append(tmp)
-
-        return instances
