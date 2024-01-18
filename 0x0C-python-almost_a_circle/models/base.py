@@ -82,11 +82,11 @@ class Base:
         '''
         file_name = cls.__name__ + ".json"
 
-        if file_name is None or len(file_name) == 0:
-            return []
-        else:
+        if file_name:
             with open(file_name, encoding="UTF8") as fd:
                 content = cls.from_json_string(fd.read())
+        else:
+            return []
 
         instances = []
 
