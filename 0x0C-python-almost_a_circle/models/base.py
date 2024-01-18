@@ -54,6 +54,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Returns the list of the JSON string representation."""
         if json_string is None:
             return '[]'
         return json.loads(json_string)
