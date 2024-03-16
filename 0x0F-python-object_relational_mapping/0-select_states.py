@@ -11,3 +11,5 @@ cur.execute("SELECT * FROM states")
 
 for row in cur.fetchall():
     print(row)
+conn.close()
+cur.close()
