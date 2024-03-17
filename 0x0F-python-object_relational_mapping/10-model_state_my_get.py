@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)
     session = session()
     st = session.query(State).order_by(State.id).\
-    filter(State.name.like(sys.argv[4],))
+        filter(State.name.like(sys.argv[4],))
 
     try:
         print(st[0].id)
