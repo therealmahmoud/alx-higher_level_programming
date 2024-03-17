@@ -19,4 +19,4 @@ session = session()
 st = session.query(State).order_by(State.id)
 
 for si in st:
-    print("{}: {}".format(si.id, si.name))
+    print(si.id, si.name)
