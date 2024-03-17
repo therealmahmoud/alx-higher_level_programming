@@ -13,6 +13,5 @@ if __name__ == "__main__":
     rows = cur.fetchall()
     tmp = list(row[0] for row in rows)
     print(*tmp, sep=", ")
-    print("")
     cur.close()
     conn.close()
