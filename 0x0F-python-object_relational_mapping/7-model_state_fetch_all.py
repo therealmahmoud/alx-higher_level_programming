@@ -13,10 +13,9 @@ if __name__ == "__main__":
                                    sys.argv[3]))
     Base.metadata.create_all(engine)
 
+    session = sessionmaker(bind=engine)
+    session = session()
+    st = session.query(State).order_by(State.id)
 
-session = sessionmaker(bind=engine)
-session = session()
-st = session.query(State).order_by(State.id)
-
-for si in st:
-    print(si.id, si.name, sep=(": "))
+    for si in st:
+        print(si.id, si.name, sep=(": "))
