@@ -5,7 +5,7 @@ sends a request to the URL and displays the value
 from urllib import request
 import sys
 
-if __name__ == '__main __'
+if __name__ == '__main __':
     url = sys.argv[1]
     request = request.Request(url)
     with request.urlopen(request) as response:
