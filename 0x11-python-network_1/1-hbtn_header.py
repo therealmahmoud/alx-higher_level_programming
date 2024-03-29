@@ -5,7 +5,8 @@ sends a request to the URL and displays the value
 from urllib import request
 import sys
 
-url = sys.argv[1]
-request = request.Request(url)
-with request.urlopen(request) as response:
-    print(dict(response.headers).get("X-Request-Id"))
+if __name__ == '__main__':
+    url = sys.argv[1]
+    request = request.Request(url)
+    with request.urlopen(request) as response:
+        print(dict(response.headers).get("X-Request-Id"))
